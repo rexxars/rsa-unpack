@@ -1,4 +1,4 @@
-import unpack from '../src'
+import unpack from '../src/rsa-unpack'
 
 const expected = [
   require('./data/expected0.json'),

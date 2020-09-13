@@ -1,6 +1,7 @@
 node_modules
-dist
 bin
 .nyc_output
 coverage
-
+dist
+dist-browser
+dist-node
