@@ -1,41 +1,86 @@
 {
-    "name" : "rsa-unpack",
-    "version" : "0.0.6",
-    "description" : "unpack rsa fields from PEM strings",
-    "main" : "index.js",
-    "bin" : {
-        "rsa-unpack" : "bin/cmd.js"
+  "name": "@rexxars/rsa-unpack",
+  "version": "1.0.0",
+  "description": "unpack rsa fields from PEM strings (typescript/browser-compatible fork)",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "bops": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.13",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-sanity": "^1.149.0",
+    "prettier": "^2.0.5",
+    "tsdx": "^0.13.2",
+    "typescript": "^4.0.2"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint src",
+    "posttest": "npm run lint",
+    "prepublishOnly": "tsdx build && npm test",
+    "coverage": "tsdx test --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rexxars/rsa-unpack.git"
+  },
+  "homepage": "https://github.com/rexxars/rsa-unpack",
+  "keywords": [
+    "crypto",
+    "rsa",
+    "pem",
+    "keypair",
+    "public",
+    "private"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT",
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "browser": true
     },
-    "directories" : {
-        "example" : "example",
-        "test" : "test"
-    },
-    "dependencies" : {
-        "optimist" : "~0.3.5"
-    },
-    "devDependencies" : {
-        "tap" : "~0.3.0"
-    },
-    "scripts" : {
-        "test" : "tap test/*.js"
-    },
-    "repository" : {
-        "type" : "git",
-        "url" : "git://github.com/substack/rsa-unpack.git"
-    },
-    "homepage" : "https://github.com/substack/rsa-unpack",
-    "keywords" : [
-        "crypto",
-        "rsa",
-        "pem",
-        "keypair",
-        "public",
-        "private"
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
+      "sanity",
+      "prettier"
     ],
-    "author" : {
-        "name" : "James Halliday",
-        "email" : "mail@substack.net",
-        "url" : "http://substack.net"
+    "rules": {
+      "prettier/prettier": "error",
+      "operator-linebreak": "off",
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": "off"
     },
-    "license" : "MIT"
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ]
+  }
 }

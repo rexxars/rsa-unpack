@@ -2,27 +2,19 @@
 
 unpack rsa fields from PEM strings
 
-[![build status](https://secure.travis-ci.org/substack/rsa-unpack.png)](http://travis-ci.org/substack/rsa-unpack)
+[![build status](https://secure.travis-ci.org/rexxars/rsa-unpack.png)](http://travis-ci.org/rexxars/rsa-unpack)
 
-# example
+## example
 
-```
-$ rsa-json > keys.json
-```
-
-``` js
-var fs = require('fs');
-var keys = require('./keys.json');
-
-var unpack = require('rsa-unpack');
-var rsa = unpack(keys.private);
-console.dir(rsa);
+```js
+const unpack = require('@rexxars/rsa-unpack')
+const rsa = unpack('-----BEGIN RSA PRIVATE KEY----- /* ... */')
+console.dir(rsa)
 ```
 
-***
+---
 
 ```
-$ node example/unpack.js
 { modulus: <Buffer 02 6f cb 5a 12 79 81 c0 b7 03 ad b8 eb 20 a3 2f 5c 26 09 ab 4e e1 e9 66 05 2c 36 84 b2 21 76 3a 65 ce 8b b3 4e fd 51 03 ea 98 4d f8 8d ab cc 1b 60 a6 3b ...>,
   bits: 1073,
   publicExponent: 65537,
@@ -34,40 +26,31 @@ $ node example/unpack.js
   coefficient: <Buffer 0f a9 06 b8 51 44 98 84 9e d7 92 5f 0d 24 0a f0 3f e1 bb 86 52 93 e5 b4 53 c9 6c 0a da ef 70 1b 83 99 a4 9a 15 e8 cb 43 5b f7 14 9b d5 a0 8c 0d 47 c0 af ...> }
 ```
 
-# methods
+## methods
 
-``` js
-var unpack = require('rsa-unpack')
+```js
+const unpack = require('@rexxars/rsa-unpack')
 ```
 
-## unpack(pemKeyString)
+### unpack(pemKeyString)
 
 Unpack the PEM-formatted string `pemKeyString` into the RSA field values.
 The key can be a public or private key.
 
 If the key is invalid, returns undefined.
 
-# command-line usage
-
-```
-usage: rsa-unpack {FILE|-} OPTIONS
-
-OPTIONS:
-
-  --format        format to expect FILE to be in.
-                  default: pem or json if FILE ends in .json
-
-  --encoding, -e  encoding to use. default: hex
-```
-
-# install
+## install
 
 With [npm](https://npmjs.org) do:
 
 ```
-npm install rsa-unpack
+npm install @rexxars/rsa-unpack
 ```
 
-# license
+## fork
+
+This is a fork of the original [rsa-unpack](https://github.com/substack/rsa-unpack) by [substack](https://github.com/substack), making it more browser-friendly and providing typescript types.
+
+## license
 
 MIT
