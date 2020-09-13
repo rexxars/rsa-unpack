@@ -1,6 +1,6 @@
 {
   "name": "@rexxars/rsa-unpack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "unpack rsa fields from PEM strings (typescript/browser-compatible fork)",
   "main": "dist/rsa-unpack.node.js",
   "browser": "dist/index.js",
@@ -35,7 +35,7 @@
     "test": "tsdx test",
     "lint": "tsdx lint src",
     "posttest": "npm run lint",
-    "prepublishOnly": "tsdx run build && npm test",
+    "prepublishOnly": "npm run build && npm test",
     "coverage": "tsdx test --coverage"
   },
   "repository": {
