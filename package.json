@@ -35,7 +35,7 @@
     "test": "tsdx test",
     "lint": "tsdx lint src",
     "posttest": "npm run lint",
-    "prepublishOnly": "tsdx build && npm test",
+    "prepublishOnly": "tsdx run build && npm test",
     "coverage": "tsdx test --coverage"
   },
   "repository": {
