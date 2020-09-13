@@ -41,7 +41,7 @@ If the key is invalid, returns undefined.
 
 ## install
 
-With [npm](https://npmjs.org) do:
+With [npm](https://www.npmjs.com/) do:
 
 ```
 npm install @rexxars/rsa-unpack
